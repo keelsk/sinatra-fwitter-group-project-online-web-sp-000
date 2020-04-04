@@ -4,10 +4,10 @@ class TweetsController < ApplicationController
     if logged_in?
       @tweets = Tweet.all
       @user = User.find_by(session[:user_id])
+      erb :'tweets/index'
     else
       redirect to "/login"
     end
-    erb :'tweets/index'
   end
 
   helpers do
