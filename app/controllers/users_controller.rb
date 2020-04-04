@@ -22,7 +22,11 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    binding.pry
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      redirect '/tweets'
+    end
+    redirect '/login'
   end
 
   def logged_in?
