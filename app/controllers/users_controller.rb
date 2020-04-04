@@ -21,6 +21,9 @@ class UsersController < ApplicationController
     erb :'users/login'
   end
 
+  post 'login' do
+  end
+
   def logged_in?
     !!session[:user_id]
   end
