@@ -22,6 +22,8 @@ class UsersController < ApplicationController
   end
 
   post 'login' do
+    @user = User.find_by(params)
+    binding.pry
   end
 
   def logged_in?
