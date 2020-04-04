@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if current_user == @tweet.user %>
 <%= @error %>
   <form action='/tweets/<%=@tweet.id%>' method="post">
     <input type ="hidden" id ="hidden" name ="_method" value ="patch"
