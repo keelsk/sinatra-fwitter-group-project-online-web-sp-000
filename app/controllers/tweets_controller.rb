@@ -2,12 +2,9 @@ class TweetsController < ApplicationController
 
   get '/tweets' do
     redirect '/login' if !logged_in?
-      @user = User.find(session[:user_id])
-      @tweets = Tweet.all
-      erb :'tweets/index'
-    else
-      redirect to "/login"
-    end
+    @user = User.find(session[:user_id])
+    @tweets = Tweet.all
+    erb :'tweets/index'
   end
 
   get 'tweets/new' do
