@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
+    redirect '/tweets' if logged_in?
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
