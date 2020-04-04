@@ -13,7 +13,8 @@ class TweetsController < ApplicationController
     erb :'tweets/new'
   end
 
-  post 'tweets' do
+  post '/tweets' do
+    binding.pry
   end
 
 end
