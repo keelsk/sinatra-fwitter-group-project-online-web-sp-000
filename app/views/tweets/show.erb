@@ -5,4 +5,5 @@ Tweet: <%=@tweet.content %>
   <input type ="submit" value ="Delete Tweet">
 </form>
 
-<button type ="button">Edit Tweet</button>
+<button type="submit" formaction="/tweets/<%=@tweet.id%>/edit">Edit Tweet </button>
+<!-- <button type ="button">Edit Tweet</button> -->
