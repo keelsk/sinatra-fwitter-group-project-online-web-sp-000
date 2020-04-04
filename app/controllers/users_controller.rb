@@ -6,9 +6,7 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if logged_in?
-      redirect '/tweets'
-    elsif params[:username] == "" || params[:email] =="" || params[:password] == ""
+    if params[:username] == "" || params[:email] =="" || params[:password] == ""
       redirect "/signup"
     else
       user = User.create(params)
