@@ -28,6 +28,7 @@ class TweetsController < ApplicationController
 
   get '/tweets/:id/edit' do
     @tweet = Tweet.find_by_id(params[:id])
+    binding.pry
     erb :'tweets/edit'
   end
 
