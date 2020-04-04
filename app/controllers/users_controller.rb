@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def logged_in?(session)
+  def logged_in?
     !!session[:user_id]
   end
 
