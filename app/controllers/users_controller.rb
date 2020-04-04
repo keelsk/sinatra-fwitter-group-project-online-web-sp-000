@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     user = User.create(params)
     if user && user.authenticate(params[:password])
       session[:user_id] = user[:id]
-      redirect '/signup'
+      redirect '/tweets'
     end
     redirect '/signup'
   end
