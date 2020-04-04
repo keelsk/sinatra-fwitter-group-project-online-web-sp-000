@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
   end
 
   helpers do
-    def self.is_logged_in?(session)
+    def is_logged_in?(session)
       !!session[:user_id]
     end
   end
