@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     erb :'users/login'
   end
 
-  post 'login' do
+  post '/login' do
     binding.pry
     @user = User.find_by(params)
   end
