@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   post '/signup' do
     user = User.create(params)
     if user && user.authenticate(params[:password])
-      user[:id] = session
+      session[:user_id] = user[:id]
       redirect '/signup'
     end
     redirect '/signup'
