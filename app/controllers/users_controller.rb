@@ -18,11 +18,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-    if logged_in?
-      erb :'tweets/index'
-    else
-      erb :'users/login'
-    end
+    erb :'users/login'
   end
 
   post '/login' do
