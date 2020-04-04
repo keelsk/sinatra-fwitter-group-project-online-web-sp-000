@@ -20,4 +20,10 @@ class TweetsController < ApplicationController
     redirect '/tweets'
   end
 
+  get '/tweets/:id' do
+    redirect 'login' if !logged_in?
+    @user = User.find(session[:user_id])
+    erb :'tweets/show'
+  end
+
 end
