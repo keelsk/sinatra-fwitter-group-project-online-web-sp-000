@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
     erb :'tweets/edit'
   end
 
-  patch '/tweets/:id' do 
+  patch '/tweets/:id' do
   end
 
 end
