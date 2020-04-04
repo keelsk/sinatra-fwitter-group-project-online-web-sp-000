@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
   end
 
   get 'tweets/new' do
-    if is_logged_in?(session)
+    if is_logged_in?
       @user = User.find_by(session[:user_id])
       erb :'tweets/new'
     else
