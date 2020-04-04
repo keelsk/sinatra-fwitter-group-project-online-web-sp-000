@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :Sessions
-    set :session_secret, "flah;eo gua;o jtl.ejg;oiuyav"
+    set :session_secret, "fwitter"
   end
 
   get '/' do
