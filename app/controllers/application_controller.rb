@@ -3,7 +3,7 @@ require './config/environment'
 class ApplicationController < Sinatra::Base
 
   configure do
-    enable :sessions
+    enable :Sessions
     set :session_secret, "fwitter"
     set :public_folder, 'public'
     set :views, 'app/views'
