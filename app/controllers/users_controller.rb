@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   post '/signup' do
     @user = User.create(params)
     user[:id] = session
-    redirect
+    redirect '/tweets'
   end
 
 end
