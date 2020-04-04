@@ -2,6 +2,7 @@ require 'pry'
 class UsersController < ApplicationController
 
   get '/signup' do
+    redirect "/tweets" if logged_in?
     erb :'users/signup'
   end
 
