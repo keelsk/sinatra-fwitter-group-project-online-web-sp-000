@@ -14,7 +14,9 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    binding.pry
+    @user = User.find(session[:user_id])
+    @tweet = @user.tweets.create(content: params[:content])
+    redirect '/tweets'
   end
 
 end
