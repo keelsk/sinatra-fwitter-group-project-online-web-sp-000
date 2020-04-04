@@ -9,7 +9,7 @@ class TweetsController < ApplicationController
 
   get '/tweets/new' do
     redirect to '/login' if !logged_in?
-    @user = User.find_by(session[:user_id])
+    @user = User.find(session[:user_id])
     erb :'tweets/new'
   end
 
