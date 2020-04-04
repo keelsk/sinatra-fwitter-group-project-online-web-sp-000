@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   get '/tweets' do
     if is_logged_in?(session)
       binding.pry
-      @user = User.find_by(session[:user_id])
+      @user = User.find(session[:user_id])
       erb :'tweets/index'
     else
       redirect to "/login"
