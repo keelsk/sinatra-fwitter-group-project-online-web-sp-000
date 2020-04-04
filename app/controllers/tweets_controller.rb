@@ -14,6 +14,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
+    redirect 'tweets/new' if params[:content] == ""
     @user = User.find(session[:user_id])
     @tweet = @user.tweets.create(content: params[:content])
     redirect '/tweets'
