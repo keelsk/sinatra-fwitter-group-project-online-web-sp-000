@@ -6,8 +6,12 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    user = User.create(params)
-    if user.save && user.authenticate(params[:password])
+    if params[:username] == "" || params[:email] ==""
+      redirect "/signup"
+    else
+      user = User.create(params)
+    end
+    if user && user.authenticate(params[:password])
       session[:user_id] = user[:id]
       redirect '/tweets'
     end
