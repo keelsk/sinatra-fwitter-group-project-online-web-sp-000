@@ -7,7 +7,8 @@ class UsersController < ApplicationController
 
   post '/signup' do
     @user = User.create(params)
-    binding.pry
+    user[:id] = session[id]
+    redirect
   end
 
 end
