@@ -18,6 +18,8 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect '/tweets'
+    else
+      redirect '/signup'
     end
   end
 
@@ -30,8 +32,9 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect to '/tweets'
+    else
+      redirect to '/login'
     end
-    redirect to '/login'
   end
 
   get '/users/:slug' do
