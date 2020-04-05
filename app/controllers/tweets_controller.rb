@@ -40,7 +40,6 @@ class TweetsController < ApplicationController
   end
 
   delete '/tweets/:id/delete' do
-    binding.pry
     @tweet = Tweet.find(params[:id])
     if current_user == @tweet.user
       @tweet.destroy
